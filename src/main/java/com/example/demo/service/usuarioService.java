@@ -46,5 +46,9 @@ public class usuarioService {
 	public List<usuario> findAll(Sort sort) {
 		return usuarioRepository.findAll(sort);
 	}
+	
+	public Optional<usuario> login(String email_usu, String password_usu){
+		return usuarioRepository.findByEmailusuAndPasswordusu(email_usu, password_usu);
+	}
 
 }

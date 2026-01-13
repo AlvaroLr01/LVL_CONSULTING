@@ -62,4 +62,11 @@ public class usuarioRest {
 		
 		return ResponseEntity.ok(nuevoUsuario);
 	}
+	
+	@PostMapping("login")
+	private ResponseEntity<usuario> login (@RequestBody usuario usuario){
+		return usuarioService.login(usuario.getEmailusu(), usuario.getPasswordusu())
+				.map(ResponseEntity::ok)
+				.orElse(ResponseEntity.status(HttpStatus.UNAUTHORIZED).build());
+	}
 }

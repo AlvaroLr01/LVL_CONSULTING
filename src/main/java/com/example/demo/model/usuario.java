@@ -1,5 +1,6 @@
 package com.example.demo.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -13,8 +14,10 @@ public class usuario {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id_usu;
-	private String email_usu;
-	private String password_usu;
+	@Column(name = "email_usu")
+	private String emailusu;
+	@Column(name = "password_usu")
+	private String passwordusu;
 	private String nombre_usu;
 	private String apellido_usu;
 	private String telefono;
@@ -25,11 +28,11 @@ public class usuario {
 	public usuario() {
 	}
 
-	public usuario(String email_usu, String password_usu, String nombre_usu, String apellido_usu, String telefono,
+	public usuario(String emailusu, String passwordusu, String nombre_usu, String apellido_usu, String telefono,
 			String cargo_usu, String empresa_usu, String foto_url_usu) {
 		super();
-		this.email_usu = email_usu;
-		this.password_usu = password_usu;
+		this.emailusu = emailusu;
+		this.passwordusu = passwordusu;
 		this.nombre_usu = nombre_usu;
 		this.apellido_usu = apellido_usu;
 		this.telefono = telefono;
@@ -46,20 +49,20 @@ public class usuario {
 		this.id_usu = id_usu;
 	}
 
-	public String getEmail_usu() {
-		return email_usu;
+	public String getEmailusu() {
+		return emailusu;
 	}
 
-	public void setEmail_usu(String email_usu) {
-		this.email_usu = email_usu;
+	public void setEmailusu(String emailusu) {
+		this.emailusu = emailusu;
 	}
 
-	public String getPassword_usu() {
-		return password_usu;
+	public String getPasswordusu() {
+		return passwordusu;
 	}
 
-	public void setPassword_usu(String password_usu) {
-		this.password_usu = password_usu;
+	public void setPasswordusu(String passwordusu) {
+		this.passwordusu = passwordusu;
 	}
 
 	public String getNombre_usu() {
@@ -110,5 +113,4 @@ public class usuario {
 		this.foto_url_usu = foto_url_usu;
 	}
 
-	
 }
